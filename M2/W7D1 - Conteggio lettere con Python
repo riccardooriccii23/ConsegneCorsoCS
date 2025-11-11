@@ -1,7 +1,7 @@
 #Questo programma ti permette di effettuare il conteggio delle lettere (ovvero la lunghezza delle parole)  inserite nella lista a
 
 def conteggio_lettere (lista_a):        #funzione
-    return [len(parola) for parola in lista_a]    #ritorno della funziona
+    return [len(parola) for parola in lista_a]    #ritorno della funzione
 
 input_utente = input("Inserisci le parole separate da spazi: ")
 lista_a = input_utente.split()
